@@ -23,9 +23,12 @@ struct MemorizeApp: App {
         }
     }()
 
+    // Instância do ViewModel
+    var game = EmojiMemoryGame()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: game) // Passa o ViewModel como parâmetro
         }
         .modelContainer(sharedModelContainer)
     }
