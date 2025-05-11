@@ -9,12 +9,20 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
+    
+    // Layout for grid.
+    let gridLayout = [GridItem(.adaptive(minimum: 80))]
+    
     var body: some View {
         HStack {
-            ForEach(viewModel.cards) { card in
-                CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
+            LazyVGrid(columns: gridLayout, spacing: 10) {
+                ForEach(viewModel.cards) { card in
+                    CardView(card: card)
+                        .aspectRatio(2/3, contentMode: .fit) // Define a proporção do cartão
+                        .onTapGesture {
+                            viewModel.choose(card: card)
+                        }
                 }
             }
         }
@@ -36,9 +44,13 @@ struct CardView: View {
                     .stroke(lineWidth: 3)
                 
                 Text(card.content)
+                    .font(.largeTitle)  // Ajuste o tamanho da fonte
+            } else if card.isMatched {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .opacity(0)  // Esconde o cartão se ele foi combinado
             } else {
                 RoundedRectangle(cornerRadius: 10.0)
-                    .fill()
+                    .fill(Color.cyan)  // Cor para cartões virados para baixo
             }
         }
     }
