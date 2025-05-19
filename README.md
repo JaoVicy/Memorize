@@ -64,5 +64,3 @@ Este projeto é apenas para fins educacionais e não é destinado para produçã
 
 ---
 
-Espero que este projeto seja útil e divertido para quem quiser explorar o mundo do desenvolvimento em Swift e SwiftUI! 😊  
-Se você tiver dúvidas ou sugestões, fique à vontade para abrir uma **issue** ou entrar em contato.  
