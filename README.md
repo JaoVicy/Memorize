@@ -40,11 +40,6 @@ As aulas cobrem tópicos essenciais de desenvolvimento iOS, incluindo:
 
 3. Execute no simulador ou em um dispositivo real clicando no botão **Play ▶️**.
 
-## ✨ Prévia do Projeto
-
-Aqui está uma prévia de como o jogo funciona:  
-*(Adicione capturas de tela ou GIFs aqui para mostrar o aplicativo em ação.)*
-
 ## 📂 Estrutura do Projeto
 
 - **`EmojiMemoryGame.swift`**  
